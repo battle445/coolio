@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7qrc</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* INTRO SCREEN */
+        #intro {
+            position: fixed;
+            inset: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        #enterBtn {
+            background: #111;
+            padding: 14px 28px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid #333;
+            transition: 0.2s;
+        }
+
+        #enterBtn:hover {
+            background: #222;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content {
+            max-width: 780px;
+            width: 90%;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .pfp {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        .box {
+            width: 100%;
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 18px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        footer {
+            margin: 60px 0;
+            opacity: 0.5;
+        }
+
+        a {
+            color: #4da3ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- INTRO -->
+    <div id="intro">
+        <button id="enterBtn">Click to Enter</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="content">
+
+            <!-- PROFILE PIC -->
+            <img src="pfp.webp" alt="pfp" class="pfp">
+
+            <!-- USERNAME -->
+            <h1>@7qrc</h1>
+
+            <!-- BIO -->
+            <div class="box">
+                <p>Hey, I'm 7qrc. (Update this bio whenever you want.)</p>
+            </div>
+
+            <!-- WHAT I'VE BEEN UP TO -->
+            <h2>What I've been up to</h2>
+            <div class="box">
+                <p>- Learning how to code better<br>
+                - Living life<br>
+                - Wanting to learn how to mod<br>
+                - Learning more C#</p>
+            </div>
+
+            <!-- FRIENDS -->
+            <h2>My Frens</h2>
+            <div class="box">
+                <p>Muffn<br>
+                Stomp<br>
+                Val<br>
+                S1lly</p>
+            </div>
+
+            <!-- OTHER STUFF -->
+            <h2>Other Stuff</h2>
+            <div class="box">
+                <p>- Chilling<br>
+                - Playing VR<br>
+                - Getting pissed off<br>
+                - Hate school</p>
+            </div>
+
+            <!-- LINKS -->
+            <h2>Links</h2>
+            <div class="box">
+                <p>
+                    <a href="https://discord.gg/e7gGm4udXg" target="_blank">Discord Server</a><br>
+                    <a href="https://www.tiktok.com/@geekahh69" target="_blank">TikTok</a>
+                </p>
+            </div>
+
+            <footer>
+                <p>© 7qrc</p>
+            </footer>
+
+        </div>
+    </div>
+
+<script>
+    document.getElementById("enterBtn").onclick = () => {
+        document.getElementById("intro").style.display = "none";
+    };
+</script>
+
+</body>
+</html>

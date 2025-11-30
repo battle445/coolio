@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7qrc</title>
+
     <style>
         body, html {
             margin: 0;
@@ -15,7 +16,7 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* INTRO SCREEN */
+        /* INTRO */
         #intro {
             position: fixed;
             inset: 0;
@@ -33,14 +34,15 @@
             border-radius: 8px;
             cursor: pointer;
             border: 1px solid #333;
-            transition: 0.2s;
             color: white;
+            transition: 0.2s;
         }
 
         #enterBtn:hover {
             background: #222;
         }
 
+        /* CONTENT */
         .container {
             width: 100%;
             display: flex;
@@ -76,11 +78,6 @@
             text-align: left;
         }
 
-        footer {
-            margin: 60px 0;
-            opacity: 0.5;
-        }
-
         a {
             color: #4da3ff;
             text-decoration: none;
@@ -90,11 +87,15 @@
             text-decoration: underline;
         }
 
+        footer {
+            margin: 60px 0;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
 
-    <!-- INTRO -->
+    <!-- INTRO SCREEN -->
     <div id="intro">
         <button id="enterBtn">Click to Enter</button>
     </div>
@@ -104,7 +105,7 @@
         <div class="content">
 
             <!-- PROFILE PIC -->
-            <img src="pfp.webp" alt="pfp" class="pfp">
+            <img src="pfp.webp" class="pfp">
 
             <!-- USERNAME -->
             <h1>@7qrc</h1>
@@ -117,28 +118,34 @@
             <!-- WHAT I'VE BEEN UP TO -->
             <h2>What I've been up to</h2>
             <div class="box">
-                <p>- Learning how to code better<br>
-                - Living life<br>
-                - Wanting to learn how to mod<br>
-                - Learning more C#</p>
+                <p>
+                    - Learning how to code better<br>
+                    - Living life<br>
+                    - Wanting to learn how to mod<br>
+                    - Learning more C#
+                </p>
             </div>
 
             <!-- FRIENDS -->
             <h2>My Frens</h2>
             <div class="box">
-                <p>Muffn<br>
-                Stomp<br>
-                Val<br>
-                S1lly</p>
+                <p>
+                    Muffn<br>
+                    Stomp<br>
+                    Val<br>
+                    S1lly
+                </p>
             </div>
 
             <!-- OTHER STUFF -->
             <h2>Other Stuff</h2>
             <div class="box">
-                <p>- Chilling<br>
-                - Playing VR<br>
-                - Getting pissed off<br>
-                - Hate school</p>
+                <p>
+                    - Chilling<br>
+                    - Playing VR<br>
+                    - Getting pissed off<br>
+                    - Hate school
+                </p>
             </div>
 
             <!-- LINKS -->
@@ -153,19 +160,28 @@
             <footer>
                 <p>© 7qrc</p>
             </footer>
-
         </div>
     </div>
 
-<!-- BACKGROUND MUSIC -->
-<audio id="bgMusic" src="I Seen It.mp3" autoplay loop></audio>
+    <!-- BACKGROUND MUSIC -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="I-Seen-It.mp3" type="audio/mpeg">
+    </audio>
 
-<script>
-    document.getElementById("enterBtn").onclick = () => {
-        document.getElementById("intro").style.display = "none";
-        document.getElementById("bgMusic").play().catch(()=>{});
-    };
-</script>
+    <script>
+        const music = document.getElementById("bgMusic");
+
+        document.getElementById("enterBtn").onclick = () => {
+            document.getElementById("intro").style.display = "none";
+
+            // Try to play audio after user interaction
+            setTimeout(() => {
+                music.volume = 1.0;
+                music.play().catch(err => console.log("Autoplay blocked:", err));
+            }, 200);
+        };
+    </script>
 
 </body>
 </html>
+

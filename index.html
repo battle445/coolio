@@ -24,10 +24,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            gap: 20px;
             z-index: 999;
         }
 
-        #enterBtn {
+        #enterBtn, #musicBtn {
             background: #111;
             padding: 14px 28px;
             font-size: 18px;
@@ -38,11 +40,11 @@
             transition: 0.2s;
         }
 
-        #enterBtn:hover {
+        #enterBtn:hover, #musicBtn:hover {
             background: #222;
         }
 
-        /* CONTENT */
+        /* MAIN CONTENT */
         .container {
             width: 100%;
             display: flex;
@@ -95,27 +97,23 @@
 </head>
 <body>
 
-    <!-- INTRO SCREEN -->
+    <!-- INTRO -->
     <div id="intro">
         <button id="enterBtn">Click to Enter</button>
+        <button id="musicBtn">Play Music 🎵</button>
     </div>
 
     <!-- MAIN CONTENT -->
     <div class="container">
         <div class="content">
 
-            <!-- PROFILE PIC -->
             <img src="pfp.webp" class="pfp">
-
-            <!-- USERNAME -->
             <h1>@7qrc</h1>
 
-            <!-- BIO -->
             <div class="box">
                 <p>Hey, I'm 7qrc. (Update this bio whenever you want.)</p>
             </div>
 
-            <!-- WHAT I'VE BEEN UP TO -->
             <h2>What I've been up to</h2>
             <div class="box">
                 <p>
@@ -126,7 +124,6 @@
                 </p>
             </div>
 
-            <!-- FRIENDS -->
             <h2>My Frens</h2>
             <div class="box">
                 <p>
@@ -137,7 +134,6 @@
                 </p>
             </div>
 
-            <!-- OTHER STUFF -->
             <h2>Other Stuff</h2>
             <div class="box">
                 <p>
@@ -148,7 +144,6 @@
                 </p>
             </div>
 
-            <!-- LINKS -->
             <h2>Links</h2>
             <div class="box">
                 <p>
@@ -163,25 +158,28 @@
         </div>
     </div>
 
-    <!-- BACKGROUND MUSIC -->
-    <audio id="bgMusic" autoplay loop>
+    <!-- MUSIC -->
+    <audio id="bgMusic" loop>
         <source src="I-Seen-It.mp3" type="audio/mpeg">
     </audio>
 
-    <script>
-        const music = document.getElementById("bgMusic");
+<script>
+    const intro = document.getElementById("intro");
+    const music = document.getElementById("bgMusic");
 
-        document.getElementById("enterBtn").onclick = () => {
-            document.getElementById("intro").style.display = "none";
+    document.getElementById("enterBtn").onclick = () => {
+        intro.style.display = "none";
+    };
 
-            // Try to play audio after user interaction
-            setTimeout(() => {
-                music.volume = 1.0;
-                music.play().catch(err => console.log("Autoplay blocked:", err));
-            }, 200);
-        };
-    </script>
+    document.getElementById("musicBtn").onclick = () => {
+        music.play()
+            .then(() => {
+                document.getElementById("musicBtn").innerText = "Music Playing 🎧";
+                document.getElementById("musicBtn").disabled = true;
+            })
+            .catch(err => console.log("Play error:", err));
+    };
+</script>
 
 </body>
 </html>
-

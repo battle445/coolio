@@ -34,6 +34,7 @@
             cursor: pointer;
             border: 1px solid #333;
             transition: 0.2s;
+            color: white;
         }
 
         #enterBtn:hover {
@@ -156,9 +157,13 @@
         </div>
     </div>
 
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" src="I Seen It.mp3" autoplay loop></audio>
+
 <script>
     document.getElementById("enterBtn").onclick = () => {
         document.getElementById("intro").style.display = "none";
+        document.getElementById("bgMusic").play().catch(()=>{});
     };
 </script>
 

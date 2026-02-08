@@ -1,185 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7qrc</title>
+  <meta charset="UTF-8">
+  <title>Bat's Bio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-        /* INTRO */
-        #intro {
-            position: fixed;
-            inset: 0;
-            background: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 999;
-        }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #0b3d2e, #020b08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bfffe8;
+    }
 
-        #enterBtn, #musicBtn {
-            background: #111;
-            padding: 14px 28px;
-            font-size: 18px;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 1px solid #333;
-            color: white;
-            transition: 0.2s;
-        }
+    .card {
+      background: rgba(5, 15, 10, 0.85);
+      border-radius: 20px;
+      padding: 25px 30px;
+      width: 480px;
+      box-shadow: 0 0 25px #00ffb3;
+    }
 
-        #enterBtn:hover, #musicBtn:hover {
-            background: #222;
-        }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-        /* MAIN CONTENT */
-        .container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
+    .bat {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #00ffb3;
+      color: #003328;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 0 15px #00ffb3;
+    }
 
-        .content {
-            max-width: 780px;
-            width: 90%;
-            margin-top: 60px;
-            text-align: center;
-        }
+    .bat img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .pfp {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #333;
-        }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #aaffdd;
+    }
 
-        h2 {
-            margin-top: 30px;
-        }
+    .bio {
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-        .box {
-            width: 100%;
-            background: #0a0a0a;
-            border: 1px solid #222;
-            border-radius: 10px;
-            padding: 18px;
-            margin-top: 20px;
-            text-align: left;
-        }
+    .friends {
+      margin-top: 15px;
+    }
 
-        a {
-            color: #4da3ff;
-            text-decoration: none;
-        }
+    .friends h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
 
-        footer {
-            margin: 60px 0;
-            opacity: 0.5;
-        }
-    </style>
+    .tag {
+      padding: 6px 10px;
+      border-radius: 20px;
+      border: 1px solid #00ffb3;
+      font-size: 12px;
+      color: #00ffb3;
+      box-shadow: 0 0 5px #00ffb3;
+    }
+
+    .credits {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 11px;
+      color: #00ffb3;
+      opacity: 0.8;
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- INTRO -->
-    <div id="intro">
-        <button id="enterBtn">Click to Enter</button>
-        <button id="musicBtn">Play Music 🎵</button>
+  <div class="card">
+    <div class="header">
+      <div class="bat"><img src="downloads/023e3c3302d345eda9629b13faadd931.webp" alt="Bat avatar"></div>
+      <h1>Bat's Bio</h1>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="container">
-        <div class="content">
-
-            <img src="pfp.webp" class="pfp">
-            <h1>@7qrc</h1>
-
-            <div class="box">
-                <p>Hey, I'm 7qrc. (Update this bio whenever you want.)</p>
-            </div>
-
-            <h2>What I've been up to</h2>
-            <div class="box">
-                <p>
-                    - Learning how to code better<br>
-                    - Living life<br>
-                    - Wanting to learn how to mod<br>
-                    - Learning more C#
-                </p>
-            </div>
-
-            <h2>My Frens</h2>
-            <div class="box">
-                <p>
-                    Muffn<br>
-                    Stomp<br>
-                    Val<br>
-                    S1lly
-                </p>
-            </div>
-
-            <h2>Other Stuff</h2>
-            <div class="box">
-                <p>
-                    - Chilling<br>
-                    - Playing VR<br>
-                    - Getting pissed off<br>
-                    - Hate school
-                </p>
-            </div>
-
-            <h2>Links</h2>
-            <div class="box">
-                <p>
-                    <a href="https://discord.gg/e7gGm4udXg" target="_blank">Discord Server</a><br>
-                    <a href="https://www.tiktok.com/@geekahh69" target="_blank">TikTok</a>
-                </p>
-            </div>
-
-            <footer>
-                <p>© 7qrc</p>
-            </footer>
-        </div>
+    <div class="bio">
+      Hello, I am Bat. im 16 uh im tuff and your fat
     </div>
 
-    <!-- MUSIC -->
-    <audio id="bgMusic" loop>
-        <source src="I-Seen-It.mp3" type="audio/mpeg">
-    </audio>
+    <div class="friends">
+      <h3>Friends</h3>
+      <div class="tags">
+        <div class="tag">muffn</div>
+        <div class="tag">ava</div>
+        <div class="tag">pixel</div>
+        <div class="tag">dex</div>
+        <div class="tag">val</div>
+        <div class="tag">yumzz</div>
+        <div class="tag">vortex</div>
+        <div class="tag">b00</div>
+      </div>
+    </div>
+  </div>
 
-<script>
-    const intro = document.getElementById("intro");
+  <audio id="bgMusic" autoplay loop muted>
+    <source src="downloads/45Gbaby, Chicken P - Rider - Remix.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
     const music = document.getElementById("bgMusic");
-
-    document.getElementById("enterBtn").onclick = () => {
-        intro.style.display = "none";
-    };
-
-    document.getElementById("musicBtn").onclick = () => {
-        music.play()
-            .then(() => {
-                document.getElementById("musicBtn").innerText = "Music Playing 🎧";
-                document.getElementById("musicBtn").disabled = true;
-            })
-            .catch(err => console.log("Play error:", err));
-    };
-</script>
+    
+    // Unmute on first user interaction
+    function unmuteMusic() {
+      music.muted = false;
+      document.removeEventListener("click", unmuteMusic);
+      document.removeEventListener("touch", unmuteMusic);
+    }
+    
+    document.addEventListener("click", unmuteMusic);
+    document.addEventListener("touchstart", unmuteMusic);
+  </script>
 
 </body>
 </html>
